@@ -1,15 +1,15 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const dotenv = require('dotenv');
 const path = require("path");
 const cors = require("cors");
-const Api = process.env.DATABASE;
-
+// dotenv.config({ path: __dirname + '/.env' });
+const url = process.env.DATABASE_URL;
+console.log(url); //
 const port = process.env.PORT || 8000;
-dotenv.config({ path: '.env' });
-
-mongoose.connect(Api);
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "./client/build")));
