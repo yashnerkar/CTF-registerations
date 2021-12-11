@@ -6,6 +6,10 @@ const bcrypt = require('bcrypt');
 const nodemailer = require("nodemailer");
 const saltRounds = 10;
 
+
+
+// router.get(/)
+
 router.post("/register", async(req, res) => {
     const { group, gmail, firstMember, secondMember, thirdMember, password } =
     req.body;
@@ -60,7 +64,7 @@ router.post("/register", async(req, res) => {
         console.log(error);
     }
 });
-router.get("/adminApi", async(req, res) => {
+router.get("/adminapi", async(req, res) => {
     const data = await Data.find();
     res.json(data);
 });

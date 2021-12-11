@@ -1,13 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import moment from "moment";
+
 function Admin() {
   const [user, setUser] = useState([]);
   useEffect(() => {
     get();
   }, []);
   const get = async () => {
-    const info = await fetch("/adminApi", {
+    const info = await fetch("/admin", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -21,15 +22,13 @@ function Admin() {
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Login</th>
-          <th scope="col">Solved</th>
-          <th scope="col">Logout</th>
-          <th scope="col">Time Taken</th>
-        </tr>
-      </thead>
+          <th scope="col"> # </th> <th scope="col"> Name </th>{" "}
+          <th scope="col"> Login </th> <th scope="col"> Solved </th>{" "}
+          <th scope="col"> Logout </th> <th scope="col"> Time Taken </th>{" "}
+        </tr>{" "}
+      </thead>{" "}
       <tbody>
+        {" "}
         {user.map((e, index) => {
           const format = [
             moment(`${e.createdAt}`).format("h:mm:ss"),
@@ -43,28 +42,23 @@ function Admin() {
           const diff = Math.abs(parseInt((time[1] - time[0]) / 60));
           return (
             <tr>
-              <th scope="row">
-                {index + 1}
-                </th>
+              <th scope="row"> {index + 1} </th> <td> {e.group} </td>{" "}
+              <td> {moment(`${e.createdAt}`).format("LTS")} </td>{" "}
               <td>
-                {e.group}
-              </td>
+                {" "}
+                {e.solution.length}
+                /15{" "}
+              </td>{" "}
+              <td> {moment(`${e.updatedAt}`).format("LTS")} </td>{" "}
               <td>
-                {moment(`${e.createdAt}`).format("LTS")}
-              </td>
-              <td>
-                {e.solution.length}/15
-              </td>
-              <td >
-                {moment(`${e.updatedAt}`).format("LTS")}
-              </td>
-              <td>
-                {diff} mins
-              </td>
+                {" "}
+                {diff}
+                mins{" "}
+              </td>{" "}
             </tr>
           );
-        })}
-      </tbody>
+        })}{" "}
+      </tbody>{" "}
     </table>
   );
 }

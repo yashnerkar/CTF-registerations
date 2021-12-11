@@ -5,10 +5,11 @@ import Home from "./components/Home";
 import Alert from "./components/Alert";
 import Admin from "./components/Admin";
 import Navbar from "./components/Navbar";
+
 function App() {
   const [register, setRegister] = useState({
     group: "",
-    gmail:"",
+    gmail: "",
     firstMember: "",
     secondMember: "",
     thirdMember: "",
@@ -24,8 +25,8 @@ function App() {
     });
   };
   const [alert, setAlert] = useState({
-    color:null,
-    message:null
+    color: null,
+    message: null,
   });
   const showAlert = (res) => {
     const show = res.split(":");
@@ -41,34 +42,30 @@ function App() {
     }, 3000);
   };
   return (
-    <div >
+    <div>
       <Router>
-        <Navbar/>
-        <Alert color={alert.color} message={alert.message}/>
-      <Switch>
-        <Route exact path="/">
-          <Home/>
-        </Route>
-        <Route exact path="/register">
-          <Register
-            setRegister={setRegister}
-            onChange={onChange}
-            group={register.group}
-            firstMember={register.firstMember}
-            secondMember={register.secondMember}
-            thirdMember={register.thirdMember}
-            password={register.password}
-            gmail={register.gmail}
-            showAlert={showAlert}
-          />
-        </Route>
-        <Route exact path="/admin">
-          <Admin/>
-        </Route>
-      </Switch>
-    </Router>
-           
-
+        <Navbar />
+        <Alert color={alert.color} message={alert.message} />
+        <Switch>
+          <Route exact path="/site-admin" component={Admin} />
+          <Route exact path="/register">
+            <Register
+              setRegister={setRegister}
+              onChange={onChange}
+              group={register.group}
+              firstMember={register.firstMember}
+              secondMember={register.secondMember}
+              thirdMember={register.thirdMember}
+              password={register.password}
+              gmail={register.gmail}
+              showAlert={showAlert}
+            />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
