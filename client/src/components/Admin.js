@@ -10,6 +10,7 @@ function Admin() {
     const info = await fetch("/admin", {
       method: "GET",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
     });
