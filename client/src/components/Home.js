@@ -6,7 +6,7 @@ function Home() {
       className="jumbotron d-flex flex-column align-items-center justify-content-center"
       style={{ height: "100vh" }}
     >
-      <h1 className="display-4"> Welcome to CTF registeration Portal </h1>{" "}
+      <h1 className="display-4"> Welcome to CTF </h1>{" "}
       <p className="lead">
         This is a simple hero unit, a simple jumbotron - style component for
         calling extra attention to featured content or information.{" "}
