@@ -47,7 +47,7 @@ function App() {
         <Navbar />
         <Alert color={alert.color} message={alert.message} />
         <Switch>
-          <Route exact path="/site-admin" component={Admin} />
+          <Route exact path="/admin" component={Admin} />
           <Route exact path="/register">
             <Register
               setRegister={setRegister}

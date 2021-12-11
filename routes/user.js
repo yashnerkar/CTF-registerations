@@ -64,7 +64,7 @@ router.post("/register", async(req, res) => {
         console.log(error);
     }
 });
-router.get("/adminapi", async(req, res) => {
+router.get("/site-admin", async(req, res) => {
     const data = await Data.find();
     res.json(data);
 });
