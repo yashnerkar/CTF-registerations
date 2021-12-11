@@ -17,8 +17,8 @@ app.use(express.static(path.join(__dirname, "./client/build")));
 app.use(require(path.join(__dirname, "routes/user.js")));
 
 
-if (process.env.NODE_ENV !== 'production') {
-    app.use(express.static("client/build"));
+if (process.env.NODE_ENV == 'production') {
+    app.use(express.static('client/build'));
 }
 
 
