@@ -7,7 +7,7 @@ function Admin() {
     get();
   }, []);
   const get = async () => {
-    const info = await fetch("/admin", {
+    const info = await fetch("/adminApi", {
       method: "GET",
       headers: {
         Accept: "application/json",
