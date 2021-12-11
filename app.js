@@ -25,5 +25,5 @@ if (process.env.NODE_ENV !== 'production') {
 
 
 app.listen(port, () => {
-    log(`Server is Listening on the ${port}...`);
+    console.log(`Server is Listening on the ${port}...`);
 });
