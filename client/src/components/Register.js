@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import "./register.css";
 
 function Register({
   gmail,
@@ -63,125 +64,116 @@ function Register({
     });
   };
   return (
-    <div
-      className="d-flex justify-content-center align-items-center"
-      style={{ height: "92vh" }}
-    >
-      <button
-        className="btn text-muted text-center"
-        style={{ position: "fixed", top: "10vh", left: "5vw" }}
-        onClick={() => {
-          history.push("/");
-        }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          fill="currentColor"
-          className="bi bi-arrow-left"
-          viewBox="0 0 16 16"
+    <div className="fill-window" style={{overflowY:'scroll'}}>
+        <button
+          className="btn text-light text-center"
+          style={{ position: "fixed", top: "2vh", left: "2vw" }}
+          onClick={() => {
+            history.push("/");
+          }}
         >
-          <path
-            fillRule="evenodd"
-            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-          />
-        </svg>{" "}
-      </button>{" "}
-      <form
-        onSubmit={getData}
-        className="border border-muted p-5 rounded shadow"
-        style={{ width: "500px" }}
-      >
-        <h1 className="text-center"> Register </h1>{" "}
-        <div className="form-group mb-2">
-          <label htmlFor="name"> Group Name </label>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            className="bi bi-arrow-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+            />
+          </svg>{" "}
+        </button>{" "}
+        
+          <div className="container-fluid  d-flex justify-content-center mt-5 ">
+            <div
+              id="card"
+              className="container col-md-12 col-sm-12 col-12 mt-3 mb-3 p-5"
+              style={{maxWidth:'580px'}}
+            >
+              <p className="text-light text-center form-banner pt-1">
+                CTF Registeration Form
+              </p>
+              <form id="registeredForm" onSubmit={getData} >
+                <div className="form-group mt-4 ">
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="formGroupExampleInput"
+                    name="group"
+                    value={group}
+                    onChange={onChange}
+                    placeholder="Group name"
+                  />
+                </div>
+                <div className="form-group mt-4">
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="formGroupExampleInput2"
+                    name="gmail"
+                    value={gmail}
+                    onChange={onChange}
+                    required
+                    placeholder=" Email id"
+                  />
+                </div>
+                <div className="form-group mt-4 ">
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="formGroupExampleInput"
+                    name="firstMember"
+                    value={firstMember}
+                    onChange={onChange}
+                    required
 
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            value={group}
-            name="group"
-            style={{ width: "100%" }}
-            onChange={onChange}
-            required
-          />
-        </div>{" "}
-        <div className="form-group mb-2">
-          <label htmlFor="gmail"> Gmail </label>
+                    placeholder="Name of first member"
+                  />
+                </div>
+                <div className="form-group mt-4">
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="formGroupExampleInput2"
+                    name="secondMember"
+                    value={secondMember}
+                    onChange={onChange}
+                    placeholder="Name of second member"
+                  />
+                </div>
+                <div className="form-group mt-4">
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="formGroupExampleInput"
+                    name="thirdMember"
+                    value={thirdMember}
+                    onChange={onChange}
+                    placeholder="Name of third member"
+                  />
+                </div>
+                <div className="form-group mt-4">
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="formGroupExampleInput2"
+                    name="password"
+                    value={password}
+                    onChange={onChange}
+                    placeholder="Password"
+                  />
+                </div>
+                <div className="form-group text-center mt-3">
+                  <button type="submit" className="close buttons">SUBMIT</button>
+                </div>
+              </form>
+            </div>
+</div>
+      </div>
 
-          <input
-            type="email"
-            className="form-control"
-            id="gmail"
-            value={gmail}
-            name="gmail"
-            style={{ width: "100%" }}
-            onChange={onChange}
-            required
-          />
-        </div>{" "}
-        <div className="form-group mb-2"> </div>{" "}
-        <div className="form-group mb-2">
-          <label htmlFor="firstmember"> First Member </label>
-
-          <input
-            type="text"
-            className="form-control"
-            id="firstmember"
-            value={firstMember}
-            name="firstMember"
-            style={{ width: "100%" }}
-            onChange={onChange}
-            required
-          />
-        </div>{" "}
-        <div className="form-group mb-2">
-          <label htmlFor="secondmember"> Second Member </label>
-          <input
-            type="text"
-            className="form-control"
-            id="secondmember"
-            value={secondMember}
-            name="secondMember"
-            style={{ width: "100%" }}
-            onChange={onChange}
-          />{" "}
-        </div>{" "}
-        <div className="form-group mb-2">
-          <label htmlFor="thirdmember"> Third Member </label>
-          <input
-            type="text"
-            className="form-control"
-            id="thirdmember"
-            value={thirdMember}
-            name="thirdMember"
-            style={{ width: "100%" }}
-            onChange={onChange}
-          />{" "}
-        </div>{" "}
-        <div className="form-group ">
-          <label htmlFor="password"> Password </label>
-
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            value={password}
-            name="password"
-            style={{ width: "100%" }}
-            onChange={onChange}
-            required
-          />
-        </div>{" "}
-        <div className="text-center">
-          <button type="submit" className="btn btn-primary text-center mt-4">
-            Register{" "}
-          </button>{" "}
-        </div>{" "}
-      </form>{" "}
-    </div>
   );
 }
 

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Courier+Prime&display=swap');
+
+.fill-window {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    background-image: url("../images/matrix.gif");
+}
+
+.title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 3rem;
+    margin-top: 10%;
+    /* border-bottom: 1px solid #fff; */
+}
+
+.headers {
+    border-bottom: 1px solid #fff;
+}
+
+.description {
+    font-family: 'Cairo', sans-serif;
+    line-height: 47px;
+    font-size: 1.8rem;
+}
+.pulse:hover, .pulse:focus {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+.pulse {
+    --color: greenyellow;
+    --hover: lightgreen;
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--hover);
+   }
+}
+.buttons {
+    color: var(--color);
+    transition: 0.25s;
+}
+.buttons:hover, .buttons:focus {
+    border-color: var(--hover);
+    color: #fff;
+}
+.buttons {
+    font-family: 'Courier Prime', monospace;
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+}
+
+
+.button {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.2rem;
+}
+
+svg text {
+    font-family: 'Cairo', sans-serif;
+    letter-spacing: 5px;
+    stroke: #adff2f;
+    font-size: 5rem;
+    font-weight: 700;
+    margin-top: 20rem;
+    stroke-width: 2;
+    animation: textAnimate 5s infinite alternate;
+}
+
+@keyframes textAnimate {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+        fill: #fff;
+    }
+    100% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffstet: -20%;
+        fill: hsla(189, 68%, 75%, 0%)
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .glow-text {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 1.5rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .glow-text {
+        font-size: 1rem;
+    }
+    .description {
+        font-size: 1rem;
+    }
+    .title {
+        font-size: 1.3rem;
+    }
+}

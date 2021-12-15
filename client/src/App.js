@@ -4,7 +4,7 @@ import { useState } from "react";
 import Home from "./components/Home";
 import Alert from "./components/Alert";
 import Admin from "./components/Admin";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 
 function App() {
   const [register, setRegister] = useState({
@@ -44,10 +44,9 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar />
-        <Alert color={alert.color} message={alert.message} />
+        <Alert color={alert.color} message={alert.message} />{" "}
         <Switch>
-          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/admin" component={Admin} />{" "}
           <Route exact path="/register">
             <Register
               setRegister={setRegister}
@@ -59,13 +58,13 @@ function App() {
               password={register.password}
               gmail={register.gmail}
               showAlert={showAlert}
-            />
-          </Route>
+            />{" "}
+          </Route>{" "}
           <Route exact path="/">
             <Home />
-          </Route>
-        </Switch>
-      </Router>
+          </Route>{" "}
+        </Switch>{" "}
+      </Router>{" "}
     </div>
   );
 }

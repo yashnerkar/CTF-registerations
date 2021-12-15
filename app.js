@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 const path = require("path");
 const cors = require("cors");
 // dotenv.config({ path: __dirname + '/.env' });
-const url = process.env.DATABASE_URL;
+const url = process.env.API_KEY;
 console.log(url); //
 const port = process.env.PORT || 8000;
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })

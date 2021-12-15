@@ -1,21 +1,38 @@
 import React from "react";
+import { useHistory,Link} from "react-router-dom";
+import "./Home.css";
 
 function Home() {
   return (
-    <div
-      className="jumbotron d-flex flex-column align-items-center justify-content-center"
-      style={{ height: "100vh" }}
-    >
-      <h1 className="display-4"> Welcome to CTF PORTAL</h1>{" "}
-      <p className="lead">
-        This is a simple hero unit, a simple jumbotron - style component for
-        calling extra attention to featured content or information.{" "}
-      </p>{" "}
-      <hr className="my-4" />
-      <p>
-        It uses utility classes for typography and spacing to space content out
-        within the larger container.{" "}
-      </p>{" "}
+    <div className="fill-window">
+        <div className="container text-div text-light">
+          <p className="title">
+            {" "}
+            <span className="headers"> Welcome to </span>{" "}
+          </p>
+          <div className="container col-md-12 col-sm-12 col-12">
+            <div className="patterns">
+              <svg width="100%" height="100%">
+                <text x="50%" y="70%" className="glow-text" textAnchor="middle">
+                  CTF PORTAL{" "}
+                </text>{" "}
+              </svg>{" "}
+            </div>{" "}
+          </div>{" "}
+          <p className=" text-center ">
+            {" "}
+            <span className="description">
+              {" "}
+              Do you love hacking and challenges ? Then you can definitely wants
+              to compete in this CTF...{" "}
+            </span>
+          </p>
+          <div className="container text-center">
+            <Link role="button"to="/register">
+              <button className="pulse buttons">APPLY NOW</button>
+              </Link>{" "}
+          </div>{" "}
+        </div>{" "}
     </div>
   );
 }
