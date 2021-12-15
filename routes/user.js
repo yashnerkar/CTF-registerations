@@ -16,11 +16,13 @@ router.post("/register", async(req, res) => {
     try {
         const passwordHash = bcrypt.hashSync(password, saltRounds);
         const check = await User.find({ group: group });
+
         if (check.length) {
             return res.json(
                 "danger:This username has already been taken, please enter new username"
             );
         }
+
         const response = await new User({
             group,
             gmail,
@@ -30,7 +32,10 @@ router.post("/register", async(req, res) => {
             password: passwordHash,
         });
         await response.save();
-        res.json("success:This data has been stored successfully");
+        // console.log(response);
+        console.log("hello");
+        res.json("success:This data has been stored successfully")
+
         const options = `
      <h2>Hello<strong> ${group}</strong><br>Your team is successfully registered. Here's your username and password for the competition.</h2>
      <p>Username: <strong><u>${group}</u></strong></p>

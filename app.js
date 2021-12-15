@@ -9,10 +9,21 @@ const cors = require("cors");
 const url = process.env.API_KEY;
 console.log(url); //
 const port = process.env.PORT || 8000;
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+const bodyParser = require("body-parser");
+
+try {
+    mongoose.connect(url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+} catch (error) {
+    console.log(error);
+}
+
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "./client/build")));
+// mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(require(path.join(__dirname, "routes/user.js")));
 
