@@ -9,6 +9,9 @@
     width: 100%;
     overflow: hidden;
     background-image: url("../images/matrix.gif");
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .title {
@@ -17,7 +20,7 @@
     color: #fff;
     text-align: center;
     line-height: 3rem;
-    margin-top: 10%;
+    /* margin-top: %; */
     /* border-bottom: 1px solid #fff; */
 }
 

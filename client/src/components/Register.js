@@ -38,7 +38,7 @@ function Register({
       }),
       credentials: "include",
     });
-    const res = await data.json();
+    const res= await data.json(); 
     showAlert(res);
     if (
       res ===
@@ -67,18 +67,19 @@ function Register({
     <div className="fill-window" style={{overflowY:'scroll'}}>
         <button
           className="btn text-light text-center"
-          style={{ position: "fixed", top: "2vh", left: "2vw" }}
+          style={{ position: "absolute", top: "2vh", left: "2vw" }}
           onClick={() => {
             history.push("/");
           }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
+            width="40"
+            height="40"
             fill="currentColor"
             className="bi bi-arrow-left"
             viewBox="0 0 16 16"
+            style={{zIndex:'100'}}
           >
             <path
               fillRule="evenodd"
@@ -87,7 +88,7 @@ function Register({
           </svg>{" "}
         </button>{" "}
         
-          <div className="container-fluid  d-flex justify-content-center mt-5 ">
+          <div className="container-fluid  d-flex align-items-center justify-content-center mt-5 ">
             <div
               id="card"
               className="container col-md-12 col-sm-12 col-12 mt-3 mb-3 p-5"
@@ -101,10 +102,11 @@ function Register({
                   <input
                     type="text"
                     className="form-control"
-                    id="formGroupExampleInput"
+
                     name="group"
                     value={group}
                     onChange={onChange}
+                    required
                     placeholder="Group name"
                   />
                 </div>
@@ -112,7 +114,7 @@ function Register({
                   <input
                     type="email"
                     className="form-control"
-                    id="formGroupExampleInput2"
+
                     name="gmail"
                     value={gmail}
                     onChange={onChange}
@@ -124,7 +126,7 @@ function Register({
                   <input
                     type="text"
                     className="form-control"
-                    id="formGroupExampleInput"
+
                     name="firstMember"
                     value={firstMember}
                     onChange={onChange}
@@ -137,7 +139,7 @@ function Register({
                   <input
                     type="text"
                     className="form-control"
-                    id="formGroupExampleInput2"
+
                     name="secondMember"
                     value={secondMember}
                     onChange={onChange}
@@ -148,7 +150,7 @@ function Register({
                   <input
                     type="text"
                     className="form-control"
-                    id="formGroupExampleInput"
+
                     name="thirdMember"
                     value={thirdMember}
                     onChange={onChange}
@@ -159,7 +161,7 @@ function Register({
                   <input
                     type="password"
                     className="form-control"
-                    id="formGroupExampleInput2"
+
                     name="password"
                     value={password}
                     onChange={onChange}
