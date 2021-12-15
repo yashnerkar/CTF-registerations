@@ -62,9 +62,9 @@ function App() {
           </Route>{" "}
           <Route exact path="/">
             <Home />
-          </Route>{" "}
-        </Switch>{" "}
-      </Router>{" "}
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
