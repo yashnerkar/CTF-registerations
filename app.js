@@ -6,9 +6,9 @@ const dotenv = require('dotenv');
 const path = require("path");
 const cors = require("cors");
 // dotenv.config({ path: __dirname + '/.env' });
-const url = process.env.API_KEY;
-console.log(url); //
-const port = process.env.PORT || 8000;
+const url = process.env.DATABASE_URL;
+// console.log(url); //
+// const port = process.env.PORT || 8000;
 const bodyParser = require("body-parser");
 
 try {
