@@ -24,6 +24,13 @@
     /* border-bottom: 1px solid #fff; */
 }
 
+#csi-logo{
+    position:fixed;
+    top:0;
+    left:0;
+    max-width:14rem;
+    max-height:14rem;
+}
 .headers {
     border-bottom: 1px solid #fff;
 }
@@ -96,7 +103,7 @@ svg text {
 
 @media screen and (max-width: 520px) {
     .glow-text {
-        font-size: 2rem;
+        font-size: 3rem;
     }
     .description {
         font-size: 1.5rem;
@@ -104,16 +111,27 @@ svg text {
     .title {
         font-size: 2rem;
     }
+    #csi-logo{
+        max-width:10rem;
+        max-height:10rem;
+    }
 }
 
 @media screen and (max-width: 300px) {
     .glow-text {
-        font-size: 1rem;
+        font-size: 2.5rem;
+        /* transform: translateY(-0%); */
     }
     .description {
-        font-size: 1rem;
+        font-size: 1.3rem;
+
     }
     .title {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
+    #csi-logo{
+        max-width:8rem;
+        max-height:8rem;
+    }
+    
 }
