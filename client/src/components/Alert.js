@@ -8,9 +8,8 @@ function Alert({ message, color }) {
         role="alert"
         style={{ width: "fit-content", zIndex: "5000", top:"5vh" }}
       >
-        {" "}
-        {message}{" "}
-      </div>{" "}
+        {message}
+      </div>
     </div>
   );
 }
