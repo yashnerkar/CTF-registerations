@@ -6,7 +6,14 @@ function Home() {
   return (
     <div className="fill-window">
       <div className="home-container">
-        <img id="csi-logo" src="csi-logo.png" alt="CSI Logo" className="logo" />
+        <a href="https://csidmce.tech/" target={"_blank"} rel="noreferrer">
+          <img
+            id="csi-logo"
+            src="csi-logo.png"
+            alt="CSI Logo"
+            className="logo"
+          />
+        </a>
       </div>
       <div className="container  text-div text-light">
         <p className="title">

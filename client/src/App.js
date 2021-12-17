@@ -38,7 +38,7 @@ function App() {
         color: null,
         message: null,
       });
-    }, 3000);
+    }, 5000);
   };
   return (
     <div>
