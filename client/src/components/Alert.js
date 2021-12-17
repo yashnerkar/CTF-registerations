@@ -6,10 +6,10 @@ function Alert({ message, color }) {
       <div
         className={`alert alert-${color} position-absolute start-50 translate-middle`}
         role="alert"
-        style={{ width: "fit-content", zIndex: "5000", top:"5vh" }}
+        style={{ width: "fit-content", zIndex: "5000", top: "5vh",fontFamily:"cairo, sans-serif"}}
       >
-        {message}
-      </div>
+        {message}{" "}
+      </div>{" "}
     </div>
   );
 }
