@@ -1,26 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo&family=Courier+Prime&display=swap");
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: black;
-}
-::-webkit-scrollbar-thumb {
-  background: black;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: black;
+ ::-webkit-scrollbar {
+  width: 0px;
 }
 .fill-window {
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  width: 100%;
-  overflow-y: auto;
-  background-image: url("../images/matrix.gif");
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 100vh;
 }
 .close {
   --color: greenyellow;

@@ -1,5 +1,4 @@
-require('dotenv').config();
-const dotenv = require('dotenv');
+require("dotenv").config();
 const express = require("express");
 const User = require("../model/UserSchema");
 const Data = require("../model/DataSchema");
@@ -8,23 +7,22 @@ const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const saltRounds = 10;
 
-
-
 router.post("/register", async(req, res) => {
     const { group, gmail, firstMember, secondMember, thirdMember, password } =
     req.body;
     try {
+        const groupLower = group.toLowerCase();
         const passwordHash = bcrypt.hashSync(password, saltRounds);
         const check = await User.find({ group: group });
 
         if (check.length) {
             return res.json(
-                "danger:This TeamName has already been taken, please enter new TeamnName"
+                "#E52B50:white:This TeamName has already been taken, please enter new TeamName"
             );
         }
 
         const response = await new User({
-            group,
+            group: groupLower,
             gmail,
             firstMember,
             secondMember,
@@ -32,8 +30,10 @@ router.post("/register", async(req, res) => {
             password: passwordHash,
         });
         await response.save();
-        console.log("hello");
-        res.json("success:Registeration Successful. Please, check your mail for your TeamName and Password");
+
+        res.json(
+            "greenyellow:black:Registeration Successful. Please, check your mail for your TeamName and Password"
+        );
 
         const options = `
      <h2>Hello<strong> ${group}</strong></h2>
@@ -64,7 +64,6 @@ router.post("/register", async(req, res) => {
         });
 
         console.log("Message sent: %s", info.messageId);
-        // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     } catch (error) {
         console.log(error);
     }

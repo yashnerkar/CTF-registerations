@@ -1,23 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo&family=Courier+Prime&display=swap");
+body {
+  background: url("../images/matrix.gif");
+}
 
 .fill-window {
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  width: 100%;
   overflow: hidden;
-  background-image: url("../images/matrix.gif");
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  height: 100vh;
 }
 
 .title {
   font-family: "Courier Prime", monospace;
   font-size: 3rem;
-  color: #fff;
   text-align: center;
   line-height: 3rem;
 }
@@ -26,8 +23,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  max-width: 14rem;
-  max-height: 14rem;
+  width: 14rem;
 }
 .headers {
   border-bottom: 1px solid #fff;
