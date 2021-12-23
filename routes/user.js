@@ -13,7 +13,7 @@ router.post("/register", async(req, res) => {
     try {
         const groupLower = group.toLowerCase();
         const passwordHash = bcrypt.hashSync(password, saltRounds);
-        const check = await User.find({ group: group });
+        const check = await User.find({ group: groupLower });
 
         if (check.length) {
             return res.json(
