@@ -8,7 +8,7 @@ const nodemailer = require("nodemailer");
 const saltRounds = 10;
 
 router.post("/register", async(req, res) => {
-    const { group, gmail, firstMember, secondMember, thirdMember, password } =
+    const { group, gmailFirstMember, gmailSecondMember, gmailThirdMember, firstMemberInfo, secondMemberInfo, thirdMemberInfo, firstMember, secondMember, thirdMember, password } =
     req.body;
     try {
         const groupLower = group.toLowerCase();
@@ -23,7 +23,12 @@ router.post("/register", async(req, res) => {
 
         const response = await new User({
             group: groupLower,
-            gmail,
+            gmailFirstMember,
+            gmailSecondMember,
+            gmailThirdMember,
+            firstMemberInfo,
+            secondMemberInfo,
+            thirdMemberInfo,
             firstMember,
             secondMember,
             thirdMember,
@@ -56,8 +61,8 @@ router.post("/register", async(req, res) => {
         });
 
         let info = await transporter.sendMail({
-            from: '"CSI-DMCE"<hellboyk723@gmail.com>',
-            to: gmail,
+            from: `"CSI-DMCE"<csicattdmce12@gmail.com>`,
+            to: gmailFirstMember,
             subject: "CTF-Registeration Successful ✔",
             text: "HAHAHHAHHHAHH",
             html: options,

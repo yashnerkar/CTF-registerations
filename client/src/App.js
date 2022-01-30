@@ -8,7 +8,12 @@ import Admin from "./components/Admin";
 function App() {
   const [register, setRegister] = useState({
     group: "",
-    gmail: "",
+    gmailFirstMember: "",
+    gmailSecondMember: "",
+    gmailThirdMember: "",
+    firstMemberInfo: "",
+    secondMemberInfo: "",
+    thirdMemberInfo: "",
     firstMember: "",
     secondMember: "",
     thirdMember: "",
@@ -62,11 +67,17 @@ function App() {
               setRegister={setRegister}
               onChange={onChange}
               group={register.group}
+              gmailFirstMember={register.gmailFirstMember}
+              gmailSecondMember={register.gmailSecondMember}
+              gmailThirdMember={register.gmailThirdMember}
+              firstMemberInfo={register.firstMemberInfo}
+              secondMemberInfo={register.secondMemberInfo}
+              thirdMemberInfo={register.thirdMemberInfo}
               firstMember={register.firstMember}
               secondMember={register.secondMember}
               thirdMember={register.thirdMember}
               password={register.password}
-              gmail={register.gmail}
+             
               showAlert={showAlert}
             />{" "}
           </Route>{" "}

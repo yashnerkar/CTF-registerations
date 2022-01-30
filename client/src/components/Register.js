@@ -3,9 +3,14 @@ import { useHistory } from "react-router-dom";
 import "./register.css";
 
 function Register({
-  gmail,
+  gmailFirstMember,
+  gmailSecondMember,
+  gmailThirdMember,
   setRegister,
   group,
+  firstMemberInfo,
+  secondMemberInfo,
+  thirdMemberInfo,
   firstMember,
   secondMember,
   thirdMember,
@@ -17,11 +22,17 @@ function Register({
   const getData = async (e) => {
     e.preventDefault();
     const groupTrim = group.trim();
-    const gmailTrim = gmail.trim();
+    const gmailFirstMemberTrim = gmailFirstMember.trim();
+    const gmailSecondMemberTrim = gmailSecondMember.trim();
+    const gmailThirdMemberTrim = gmailThirdMember.trim();
+    const firstMemberInfoTrim = firstMemberInfo.trim();
+    const secondMemberInfoTrim = secondMemberInfo.trim();
+    const thirdMemberInfoTrim = thirdMemberInfo.trim();
     const firstMemberTrim = firstMember.trim().toLowerCase();
     const secondMemberTrim = secondMember.trim().toLowerCase();
     const thirdMemberTrim = thirdMember.trim().toLowerCase();
     const passwordTrim = password.trim();
+
     const data = await fetch("/register", {
       method: "POST",
       headers: {
@@ -30,7 +41,12 @@ function Register({
       },
       body: JSON.stringify({
         group: groupTrim,
-        gmail: gmailTrim,
+        gmailFirstMember: gmailFirstMemberTrim,
+        gmailSecondMember: gmailSecondMemberTrim,
+        gmailThirdMember: gmailThirdMemberTrim,
+        firstMemberInfo: firstMemberInfoTrim,
+        secondMemberInfo: secondMemberInfoTrim,
+        thirdMemberInfo: thirdMemberInfoTrim,
         firstMember: firstMemberTrim,
         secondMember: secondMemberTrim,
         thirdMember: thirdMemberTrim,
@@ -46,7 +62,12 @@ function Register({
     ) {
       return setRegister({
         group: "",
-        gmail: "",
+        gmailFirstMember: "",
+        gmailSecondMember: "",
+        gmailThirdMember: "",
+        firstMemberInfo: "",
+        secondMemberInfo: "",
+        thirdMemberInfo: "",
         firstMember: "",
         secondMember: "",
         thirdMember: "",
@@ -56,7 +77,12 @@ function Register({
     history.push("/");
     setRegister({
       group: "",
-      gmail: "",
+      gmailFirstMember: "",
+      gmailSecondMember: "",
+      gmailThirdMember: "",
+      firstMemberInfo: "",
+      secondMemberInfo: "",
+      thirdMemberInfo: "",
       firstMember: "",
       secondMember: "",
       thirdMember: "",
@@ -77,17 +103,17 @@ function Register({
           style={{ zIndex: "100", fontSize: "40px" }}
         ></i>{" "}
       </button>{" "}
-      <div className="container-fluid  d-flex align-items-center justify-content-center mt-5 ">
+      <div className="container-fluid  d-flex align-items-center justify-content-center mt-1">
         <div
           id="card"
-          className="container col-md-12 col-sm-12 col-12 mt-3 mb-3 p-5"
+          className="container col-md-12 col-sm-12 col-12 mt-2 mb-2 py-3 px-5"
           style={{ maxWidth: "580px" }}
         >
-          <p className="text-light text-center form-banner pt-1">
+          <p className="text-light text-center form-banner pt-2">
             CTF Registeration Form{" "}
           </p>{" "}
           <form id="registeredForm" onSubmit={getData}>
-            <div className="form-group mt-4 ">
+            <div className="form-group mt-2">
               <input
                 type="text"
                 className="form-control"
@@ -98,18 +124,18 @@ function Register({
                 placeholder="Group name"
               />
             </div>{" "}
-            <div className="form-group mt-4">
+            <div className="form-group mt-2">
               <input
                 type="email"
                 className="form-control"
-                name="gmail"
-                value={gmail}
+                name="gmailFirstMember"
+                value={gmailFirstMember}
                 onChange={onChange}
                 required
-                placeholder=" Email id"
+                placeholder="Email id of first Member"
               />
             </div>{" "}
-            <div className="form-group mt-4 ">
+            <div className="form-group mt-1">
               <input
                 type="text"
                 className="form-control"
@@ -120,27 +146,87 @@ function Register({
                 placeholder="Name of first member"
               />
             </div>{" "}
-            <div className="form-group mt-4">
+            <div className="form-group mt-1">
+              <input
+                type="text"
+                className="form-control"
+                name="firstMemberInfo"
+                value={firstMemberInfo}
+                onChange={onChange}
+                required
+                placeholder="class-div-roll no of first member"
+              />
+            </div>{" "}
+            <div className="form-group mt-1">
+              <input
+                type="email"
+                className="form-control"
+                name="gmailSecondMember"
+                value={gmailSecondMember}
+                onChange={onChange}
+
+                placeholder="Email id of second member"
+              />
+            </div>{" "}
+            <div className="form-group mt-1">
               <input
                 type="text"
                 className="form-control"
                 name="secondMember"
                 value={secondMember}
                 onChange={onChange}
+
                 placeholder="Name of second member"
               />
             </div>{" "}
-            <div className="form-group mt-4">
+            <div className="form-group mt-1">
+              <input
+                type="text"
+                className="form-control"
+                name="secondMemberInfo"
+                value={secondMemberInfo}
+                onChange={onChange}
+
+                placeholder="class-div-roll no of second member"
+              />
+            </div>{" "}
+            <div className="form-group mt-1">
+              <input
+                type="email"
+                className="form-control"
+                name="gmailThirdMember"
+                value={gmailThirdMember}
+                onChange={onChange}
+
+                placeholder="Email id of third member"
+              />
+            </div>{" "}
+            <div className="form-group mt-1">
               <input
                 type="text"
                 className="form-control"
                 name="thirdMember"
                 value={thirdMember}
                 onChange={onChange}
+
                 placeholder="Name of third member"
               />
             </div>{" "}
-            <div className="form-group mt-4">
+            <div className="form-group mt-1">
+              <input
+                type="text"
+                className="form-control"
+                name="thirdMemberInfo"
+                value={thirdMemberInfo}
+                onChange={onChange}
+
+                placeholder="class-div-roll no of third member"
+              />
+            </div>{" "}
+           
+           
+          
+            <div className="form-group mt-1">
               <input
                 type="password"
                 className="form-control"
@@ -150,7 +236,7 @@ function Register({
                 placeholder="Password"
               />
             </div>{" "}
-            <div className="form-group text-center mt-3">
+            <div className="form-group text-center mt-1">
               <button type="submit" className="close buttons">
                 SUBMIT{" "}
               </button>{" "}
