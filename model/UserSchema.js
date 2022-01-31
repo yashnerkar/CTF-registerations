@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
 const userFormat = new mongoose.Schema({
     group: {
@@ -13,9 +14,22 @@ const userFormat = new mongoose.Schema({
         type: String,
         required: true
     },
+    collegeFirstMember: {
+        type: String,
+        required: true
+    },
     firstMemberInfo: {
         type: String,
         required: true
+    },
+    phoneFirstMember: {
+        type: Number,
+        validate: {
+            validator: function(v) {
+                return /^\d{10}$/.test(v);
+            },
+            message: '{VALUE} is not a valid phone number!'
+        }
     },
     gmailSecondMember: {
         type: String,
@@ -23,8 +37,14 @@ const userFormat = new mongoose.Schema({
     secondMember: {
         type: String,
     },
+    collegeSecondMember: {
+        type: String,
+    },
     secondMemberInfo: {
         type: String,
+    },
+    phoneSecondMember: {
+        type: Number,
     },
     gmailThirdMember: {
         type: String,
@@ -32,8 +52,14 @@ const userFormat = new mongoose.Schema({
     thirdMember: {
         type: String
     },
+    collegeThirdMember: {
+        type: String
+    },
     thirdMemberInfo: {
         type: String,
+    },
+    phoneThirdMember: {
+        type: Number,
     },
     password: {
         type: String,

@@ -11,6 +11,12 @@ function App() {
     gmailFirstMember: "",
     gmailSecondMember: "",
     gmailThirdMember: "",
+    collegeFirstMember: "",
+    collegeSecondMember: "",
+    collegeThirdMember: "",
+    phoneFirstMember: "",
+    phoneSecondMember: "",
+    phoneThirdMember: "",
     firstMemberInfo: "",
     secondMemberInfo: "",
     thirdMemberInfo: "",
@@ -70,6 +76,12 @@ function App() {
               gmailFirstMember={register.gmailFirstMember}
               gmailSecondMember={register.gmailSecondMember}
               gmailThirdMember={register.gmailThirdMember}
+              collegeFirstMember={register.collegeFirstMember}
+              collegeSecondMember={register.collegeSecondMember}
+              collegeThirdMember={register.collegeThirdMember}
+              phoneFirstMember={register.phoneFirstMember}
+              phoneSecondMember={register.phoneSecondMember}
+              phoneThirdMember={register.phoneThirdMember}
               firstMemberInfo={register.firstMemberInfo}
               secondMemberInfo={register.secondMemberInfo}
               thirdMemberInfo={register.thirdMemberInfo}

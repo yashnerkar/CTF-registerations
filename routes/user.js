@@ -8,7 +8,25 @@ const nodemailer = require("nodemailer");
 const saltRounds = 10;
 
 router.post("/register", async(req, res) => {
-    const { group, gmailFirstMember, gmailSecondMember, gmailThirdMember, firstMemberInfo, secondMemberInfo, thirdMemberInfo, firstMember, secondMember, thirdMember, password } =
+    const {
+        group,
+        gmailFirstMember,
+        gmailSecondMember,
+        gmailThirdMember,
+        collegeFirstMember,
+        collegeSecondMember,
+        collegeThirdMember,
+        phoneFirstMember,
+        phoneSecondMember,
+        phoneThirdMember,
+        firstMemberInfo,
+        secondMemberInfo,
+        thirdMemberInfo,
+        firstMember,
+        secondMember,
+        thirdMember,
+        password
+    } =
     req.body;
     try {
         const groupLower = group.toLowerCase();
@@ -26,6 +44,12 @@ router.post("/register", async(req, res) => {
             gmailFirstMember,
             gmailSecondMember,
             gmailThirdMember,
+            collegeFirstMember,
+            collegeSecondMember,
+            collegeThirdMember,
+            phoneFirstMember,
+            phoneSecondMember,
+            phoneThirdMember,
             firstMemberInfo,
             secondMemberInfo,
             thirdMemberInfo,
