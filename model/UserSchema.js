@@ -18,6 +18,14 @@ const userFormat = new mongoose.Schema({
         type: String,
         required: true
     },
+    departmentOfFirstMember: {
+        type: String,
+        required: true
+    },
+    yearOfFirstMember: {
+        type: String,
+        required: true
+    },
     firstMemberInfo: {
         type: String,
         required: true
@@ -38,6 +46,12 @@ const userFormat = new mongoose.Schema({
         type: String,
     },
     collegeSecondMember: {
+        type: String,
+    },
+    departmentOfSecondMember: {
+        type: String,
+    },
+    yearOfSecondMember: {
         type: String,
     },
     secondMemberInfo: {

@@ -20,6 +20,10 @@ router.post("/register", async(req, res) => {
         secondMemberInfo,
         firstMember,
         secondMember,
+        departmentOfFirstMember,
+        departmentOfSecondMember,
+        yearOfFirstMember,
+        yearOfSecondMember,
         password
     } =
     req.body;
@@ -44,6 +48,10 @@ router.post("/register", async(req, res) => {
             phoneSecondMember,
             firstMemberInfo,
             secondMemberInfo,
+            departmentOfFirstMember,
+            departmentOfSecondMember,
+            yearOfFirstMember,
+            yearOfSecondMember,
             firstMember,
             secondMember,
             password: passwordHash,

@@ -12,6 +12,10 @@ function Register({
   setRegister,
   firstMemberInfo,
   secondMemberInfo,
+  departmentOfFirstMember,
+  departmentOfSecondMember,
+  yearOfFirstMember,
+  yearOfSecondMember,
   group,
   firstMember,
   secondMember,
@@ -27,6 +31,10 @@ function Register({
     const gmailSecondMemberTrim = gmailSecondMember.trim();
     const firstMemberInfoTrim = firstMemberInfo.trim();
     const secondMemberInfoTrim = secondMemberInfo.trim();
+    const departmentOfSecondMemberTrim = departmentOfSecondMember.trim();
+    const departmentOfFirstMemberTrim = departmentOfFirstMember.trim();
+    const yearOfFirstMemberTrim = yearOfFirstMember.trim();
+    const yearOfSecondMemberTrim = yearOfSecondMember.trim();
     const collegeFirstMemberTrim = collegeFirstMember.trim();
     const collegeSecondMemberTrim = collegeSecondMember.trim();
     const phoneFirstMemberTrim = phoneFirstMember.trim();
@@ -48,6 +56,10 @@ function Register({
         gmailSecondMember: gmailSecondMemberTrim,
         firstMemberInfo: firstMemberInfoTrim,
         secondMemberInfo: secondMemberInfoTrim,
+        departmentOfSecondMember: departmentOfSecondMemberTrim,
+        departmentOfFirstMember: departmentOfFirstMemberTrim,
+        yearOfFirstMember: yearOfFirstMemberTrim,
+        yearOfSecondMember: yearOfSecondMemberTrim,
         collegeFirstMember: collegeFirstMemberTrim,
         collegeSecondMember: collegeSecondMemberTrim,
         phoneFirstMember: phoneFirstMemberTrim,
@@ -70,6 +82,10 @@ function Register({
         firstMemberInfo: "",
         collegeFirstMember: "",
         phoneFirstMember: "",
+        departmentOfFirstMember: "",
+        yearOfFirstMember: "",
+        departmentOfSecondMember: "",
+        yearOfSecondMember: "",
         firstMember: "",
         secondMember: "",
         collegeSecondMember: "",
@@ -86,6 +102,10 @@ function Register({
       gmailSecondMember: "",
       firstMemberInfo: "",
       secondMemberInfo: "",
+      departmentOfSecondMember: "",
+      departmentOfFirstMember: "",
+      yearOfFirstMember: "",
+      yearOfSecondMember: "",
       collegeFirstMember: "",
       collegeSecondMember: "",
       phoneFirstMember: "",
@@ -167,6 +187,26 @@ function Register({
               <input
                 type="text"
                 className="form-control"
+                name="departmentOfFirstMember"
+                value={departmentOfFirstMember}
+                onChange={onChange}
+                placeholder="Department of first member"
+              />
+            </div>{" "}
+            <div className="form-group mt-3">
+              <input
+                type="text"
+                className="form-control"
+                name="yearOfFirstMember"
+                value={yearOfFirstMember}
+                onChange={onChange}
+                placeholder="year of first member"
+              />
+            </div>{" "}
+            <div className="form-group mt-3">
+              <input
+                type="text"
+                className="form-control"
                 name="firstMemberInfo"
                 value={firstMemberInfo}
                 onChange={onChange}
@@ -213,6 +253,26 @@ function Register({
                 value={collegeSecondMember}
                 onChange={onChange}
                 placeholder="college of second member"
+              />
+            </div>{" "}
+            <div className="form-group mt-3">
+              <input
+                type="text"
+                className="form-control"
+                name="departmentOfSecondMember"
+                value={departmentOfSecondMember}
+                onChange={onChange}
+                placeholder="Department of second member"
+              />
+            </div>{" "}
+            <div className="form-group mt-3">
+              <input
+                type="text"
+                className="form-control"
+                name="yearOfSecondMember"
+                value={yearOfSecondMember}
+                onChange={onChange}
+                placeholder="Year of second member"
               />
             </div>{" "}
             <div className="form-group mt-3">
