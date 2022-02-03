@@ -12,19 +12,14 @@ router.post("/register", async(req, res) => {
         group,
         gmailFirstMember,
         gmailSecondMember,
-        gmailThirdMember,
         collegeFirstMember,
         collegeSecondMember,
-        collegeThirdMember,
         phoneFirstMember,
         phoneSecondMember,
-        phoneThirdMember,
         firstMemberInfo,
         secondMemberInfo,
-        thirdMemberInfo,
         firstMember,
         secondMember,
-        thirdMember,
         password
     } =
     req.body;
@@ -43,19 +38,14 @@ router.post("/register", async(req, res) => {
             group: groupLower,
             gmailFirstMember,
             gmailSecondMember,
-            gmailThirdMember,
             collegeFirstMember,
             collegeSecondMember,
-            collegeThirdMember,
             phoneFirstMember,
             phoneSecondMember,
-            phoneThirdMember,
             firstMemberInfo,
             secondMemberInfo,
-            thirdMemberInfo,
             firstMember,
             secondMember,
-            thirdMember,
             password: passwordHash,
         });
         await response.save();
@@ -88,7 +78,7 @@ router.post("/register", async(req, res) => {
             from: `"CSI-DMCE"<csicattdmce12@gmail.com>`,
             to: gmailFirstMember,
             subject: "CTF-Registeration Successful ✔",
-            text: "HAHAHHAHHHAHH",
+            text: "CSI-CTF-DMCE",
             html: options,
         });
 

@@ -10,19 +10,14 @@ function App() {
     group: "",
     gmailFirstMember: "",
     gmailSecondMember: "",
-    gmailThirdMember: "",
     collegeFirstMember: "",
     collegeSecondMember: "",
-    collegeThirdMember: "",
     phoneFirstMember: "",
     phoneSecondMember: "",
-    phoneThirdMember: "",
     firstMemberInfo: "",
     secondMemberInfo: "",
-    thirdMemberInfo: "",
     firstMember: "",
     secondMember: "",
-    thirdMember: "",
     password: "",
   });
   const onChange = (e) => {
@@ -75,19 +70,14 @@ function App() {
               group={register.group}
               gmailFirstMember={register.gmailFirstMember}
               gmailSecondMember={register.gmailSecondMember}
-              gmailThirdMember={register.gmailThirdMember}
               collegeFirstMember={register.collegeFirstMember}
               collegeSecondMember={register.collegeSecondMember}
-              collegeThirdMember={register.collegeThirdMember}
               phoneFirstMember={register.phoneFirstMember}
               phoneSecondMember={register.phoneSecondMember}
-              phoneThirdMember={register.phoneThirdMember}
               firstMemberInfo={register.firstMemberInfo}
               secondMemberInfo={register.secondMemberInfo}
-              thirdMemberInfo={register.thirdMemberInfo}
               firstMember={register.firstMember}
               secondMember={register.secondMember}
-              thirdMember={register.thirdMember}
               password={register.password}
              
               showAlert={showAlert}

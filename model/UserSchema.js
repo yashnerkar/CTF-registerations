@@ -46,21 +46,6 @@ const userFormat = new mongoose.Schema({
     phoneSecondMember: {
         type: Number,
     },
-    gmailThirdMember: {
-        type: String,
-    },
-    thirdMember: {
-        type: String
-    },
-    collegeThirdMember: {
-        type: String
-    },
-    thirdMemberInfo: {
-        type: String,
-    },
-    phoneThirdMember: {
-        type: Number,
-    },
     password: {
         type: String,
         required: true,

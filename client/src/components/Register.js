@@ -5,21 +5,16 @@ import "./register.css";
 function Register({
   gmailFirstMember,
   gmailSecondMember,
-  gmailThirdMember,
   collegeFirstMember,
   collegeSecondMember,
-  collegeThirdMember,
   phoneFirstMember,
   phoneSecondMember,
-  phoneThirdMember,
   setRegister,
-  group,
   firstMemberInfo,
   secondMemberInfo,
-  thirdMemberInfo,
+  group,
   firstMember,
   secondMember,
-  thirdMember,
   password,
   onChange,
   showAlert,
@@ -30,19 +25,15 @@ function Register({
     const groupTrim = group.trim();
     const gmailFirstMemberTrim = gmailFirstMember.trim();
     const gmailSecondMemberTrim = gmailSecondMember.trim();
-    const gmailThirdMemberTrim = gmailThirdMember.trim();
     const firstMemberInfoTrim = firstMemberInfo.trim();
     const secondMemberInfoTrim = secondMemberInfo.trim();
-    const thirdMemberInfoTrim = thirdMemberInfo.trim();
     const collegeFirstMemberTrim = collegeFirstMember.trim();
     const collegeSecondMemberTrim = collegeSecondMember.trim();
-    const collegeThirdMemberTrim = collegeThirdMember.trim();
     const phoneFirstMemberTrim = phoneFirstMember.trim();
     const phoneSecondMemberTrim = phoneSecondMember.trim();
-    const phoneThirdMemberTrim = phoneThirdMember.trim();
     const firstMemberTrim = firstMember.trim().toLowerCase();
     const secondMemberTrim = secondMember.trim().toLowerCase();
-    const thirdMemberTrim = thirdMember.trim().toLowerCase();
+    
     const passwordTrim = password.trim();
 
     const data = await fetch("/register", {
@@ -55,19 +46,14 @@ function Register({
         group: groupTrim,
         gmailFirstMember: gmailFirstMemberTrim,
         gmailSecondMember: gmailSecondMemberTrim,
-        gmailThirdMember: gmailThirdMemberTrim,
         firstMemberInfo: firstMemberInfoTrim,
         secondMemberInfo: secondMemberInfoTrim,
-        thirdMemberInfo: thirdMemberInfoTrim,
         collegeFirstMember: collegeFirstMemberTrim,
         collegeSecondMember: collegeSecondMemberTrim,
-        collegeThirdMember: collegeThirdMemberTrim,
         phoneFirstMember: phoneFirstMemberTrim,
         phoneSecondMember: phoneSecondMemberTrim,
-        phoneThirdMember: phoneThirdMemberTrim,
         firstMember: firstMemberTrim,
         secondMember: secondMemberTrim,
-        thirdMember: thirdMemberTrim,
         password: passwordTrim,
       }),
       credentials: "include",
@@ -81,20 +67,15 @@ function Register({
       return setRegister({
         group: "",
         gmailFirstMember: "",
-        gmailSecondMember: "",
-        gmailThirdMember: "",
         firstMemberInfo: "",
-        secondMemberInfo: "",
-        thirdMemberInfo: "",
         collegeFirstMember: "",
-        collegeSecondMember: "",
-        collegeThirdMember: "",
         phoneFirstMember: "",
-        phoneSecondMember: "",
-        phoneThirdMember: "",
         firstMember: "",
         secondMember: "",
-        thirdMember: "",
+        collegeSecondMember: "",
+        gmailSecondMember: "",
+        secondMemberInfo: "",
+        phoneSecondMember: "",
         password: "",
       });
     }
@@ -103,19 +84,14 @@ function Register({
       group: "",
       gmailFirstMember: "",
       gmailSecondMember: "",
-      gmailThirdMember: "",
       firstMemberInfo: "",
       secondMemberInfo: "",
-      thirdMemberInfo: "",
       collegeFirstMember: "",
       collegeSecondMember: "",
-      collegeThirdMember: "",
       phoneFirstMember: "",
       phoneSecondMember: "",
-      phoneThirdMember: "",
       firstMember: "",
       secondMember: "",
-      thirdMember: "",
       password: "",
     });
   };
@@ -259,56 +235,7 @@ function Register({
                 placeholder="phone no. of second member"
               />
             </div>{" "}
-            <div className="form-group mt-3">
-              <input
-                type="email"
-                className="form-control"
-                name="gmailThirdMember"
-                value={gmailThirdMember}
-                onChange={onChange}
-                placeholder="Email id of third member"
-              />
-            </div>{" "}
-            <div className="form-group mt-3">
-              <input
-                type="text"
-                className="form-control"
-                name="thirdMember"
-                value={thirdMember}
-                onChange={onChange}
-                placeholder="Name of third member"
-              />
-            </div>{" "}
-            <div className="form-group mt-3">
-              <input
-                type="text"
-                className="form-control"
-                name="collegeThirdMember"
-                value={collegeThirdMember}
-                onChange={onChange}
-                placeholder="college  of third member"
-              />
-            </div>{" "}
-            <div className="form-group mt-3">
-              <input
-                type="text"
-                className="form-control"
-                name="thirdMemberInfo"
-                value={thirdMemberInfo}
-                onChange={onChange}
-                placeholder="class-div-roll no of third member"
-              />
-            </div>{" "}
-            <div className="form-group mt-3">
-              <input
-                type="text"
-                className="form-control"
-                name="phoneThirdMember"
-                value={phoneThirdMember}
-                onChange={onChange}
-                placeholder="phone no. of third member"
-              />
-            </div>{" "}
+           
             <div className="form-group mt-3">
               <input
                 type="password"
