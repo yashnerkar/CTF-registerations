@@ -16,6 +16,10 @@ function App() {
     phoneSecondMember: "",
     firstMemberInfo: "",
     secondMemberInfo: "",
+    departmentOfFirstMember: "",
+    departmentOfSecondMember: "",
+    yearOfFirstMember: "",
+    yearOfSecondMember: "",
     firstMember: "",
     secondMember: "",
     password: "",
@@ -75,11 +79,14 @@ function App() {
               phoneFirstMember={register.phoneFirstMember}
               phoneSecondMember={register.phoneSecondMember}
               firstMemberInfo={register.firstMemberInfo}
+              departmentOfFirstMember={register.departmentOfFirstMember}
+              yearOfFirstMember={register.yearOfFirstMember}
+              departmentOfSecondMember={register.departmentOfSecondMember}
+              yearOfSecondMember={register.yearOfSecondMember}
               secondMemberInfo={register.secondMemberInfo}
               firstMember={register.firstMember}
               secondMember={register.secondMember}
               password={register.password}
-             
               showAlert={showAlert}
             />{" "}
           </Route>{" "}
