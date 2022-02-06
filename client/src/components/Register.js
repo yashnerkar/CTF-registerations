@@ -304,6 +304,7 @@ function Register({
                 value={password}
                 onChange={onChange}
                 placeholder="Password"
+                required
               />
             </div>{" "}
             <div className="form-group text-center mt-3">
